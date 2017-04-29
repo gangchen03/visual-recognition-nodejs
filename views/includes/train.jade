@@ -2,14 +2,14 @@
   .gray-overlay.gray-overlay_visible
   div._demo--container
     ._container--training
-      h1.base--h2.use--header Train a demo classifier
+      h1.base--h2.use--header Train a flooding classifier
       div
         | To create a temporary trial classifier, select at least 3 classes from the example image bundles.
       h2 Example Image Bundles
       ._training--examples
-        ._training--example.clickable(data-kind='dogs')
+        ._training--example.clickable(data-kind='flood')
           h3 Dog Breeds
-          img(src='/images/bundles/dogs/thumbnail.jpg')
+          img(src='/images/bundles/flood/flooding_1.jpg')
         ._training--example.clickable(data-kind='moleskine')
           h3 Moleskine Types
           img(src='/images/bundles/moleskine/thumbnail.jpg')
@@ -156,7 +156,7 @@
           button._negative(data-name='negative') Select
       ._examples--contact-sheet(data-kind='moleskine')
         img
-      .license Images courtesy of IBM Watson partner 
+      .license Images courtesy of IBM Watson partner
         a(class="base--a", href='http://www.moleskine.com/us/', target='_blank') Moleskine.
     ._examples(data-kind='omniearth')
       a.select_all(data-kind='omniearth') Select All
@@ -179,7 +179,7 @@
           button._positive(data-name='tennis') Select
       ._examples--contact-sheet(data-kind='omniearth')
         img
-      .license Images courtesy of IBM Watson partner 
+      .license Images courtesy of IBM Watson partner
         a(class="base--a", href='http://omniearth.net/' target='_blank') OmniEarth.
     .train--row
       #formStateErrorMessage
@@ -203,7 +203,7 @@
       .loader-container
         svg.loader(viewBox='25 25 50 50')
           circle.loader__path(cx='50', cy='50', r='20')
-      p.base--p.loading--message Watson is training your new classifier. 
+      p.base--p.loading--message Watson is training your new classifier.
       p.base--p.loading--message This might take up to 3-4 minutes based on number of images.
     .error.train--error
       img.train--error-image.error--image(src='images/icons/alert.svg')

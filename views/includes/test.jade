@@ -12,7 +12,7 @@
     p.base--p.test--description Test your newly trained demo classifier with a similar image that was not in the training set.
     a.base--a.test--random-test-image(href="#") Use a system test image
     form(id='test--fileupload', class='test--form test--dropzone', data-upload-template-id='template-upload-test')
-      input(id='test_classifier_id', type='hidden', name='classifier_id')
+      input(id='test_classifier_id', type='hidden', name='classifier_id' value='houston_flood_1594046705')
       div(class='test--url')
         div.test--invalid-url.display-none Invalid URL
         div.test--invalid-image-url.display-none The URL must end with .JPG, .GIF, or .PNG.
@@ -21,7 +21,7 @@
       div(class='test--dropzone')
         label(class='test--file-input-button base--button', for='test--file')
           div(class='test--file-input-button-big-plus')
-          | Or 
+          | Or
           span.base--a select
           span.test--file-input-button-drag-text  or drag
           |  your own image

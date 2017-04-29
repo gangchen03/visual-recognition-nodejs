@@ -37,8 +37,8 @@ require('./config/express')(app);
 // If no API Key is provided here, the watson-developer-cloud@2.x.x library will check for an VISUAL_RECOGNITION_API_KEY
 // environment property and then fall back to the VCAP_SERVICES property provided by Bluemix.
 var visualRecognition = new watson.VisualRecognitionV3({
-  // api_key: '<api-key>',
-  version_date: '2015-05-19'
+  api_key: '3f5d1a00bd14f82eabfc0f30ddc1bc6da6fb8f12',
+  version_date: '2016-05-20'
 });
 
 app.get('/', function(req, res) {
@@ -264,6 +264,7 @@ app.post('/api/classify', app.upload.single('images_file'), function(req, res) {
   var methods = [];
   if (req.body.classifier_id || process.env.OVERRIDE_CLASSIFIER_ID) {
     params.classifier_ids = req.body.classifier_id ? [req.body.classifier_id] : [process.env.OVERRIDE_CLASSIFIER_ID];
+    console.log("Classify the image now....");
     methods.push('classify');
   } else {
     methods.push('classify');

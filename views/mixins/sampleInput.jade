@@ -9,7 +9,7 @@ mixin sampleInput(className, bundle, classifierId)
     - bundleImages.push('images/bundles/' + bundle + '/test/' + val + '.jpg')
 
   form(id='#{className}--fileupload', class='#{className}--form #{className}--dropzone hideload', data-upload-template-id='template-upload-#{className}')
-    input(id='classifier_id', type='hidden', name='classifier_id', value='#{classifierId || ""}')
+    input(id='classifier_id', type='hidden', name='classifier_id', value='houston_flood_1594046705')
     if className == 'use'
       div(class='#{className}--example-images #{className}--example-images_default')
         +sampleImages(sampleImages, className, 'default')
@@ -29,4 +29,3 @@ mixin sampleInput(className, bundle, classifierId)
       div(class='#{className}--invalid-image-url display-none') The URL must end with .JPG, .GIF, or .PNG.
       input(class='#{className}--url-input base--input', type='text', placeholder='Or paste an image URL', name='url')
       input(class='#{className}--image-data-input base--input', type='hidden', name='image_data')
-
