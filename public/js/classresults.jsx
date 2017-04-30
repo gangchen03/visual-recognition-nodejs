@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import axios from 'axios';
+
 let jpath = require('jpath-query');
 
 let base64Object = function(arg) {
@@ -8,15 +10,41 @@ let base64Object = function(arg) {
 }
 
 class GreatCF extends React.Component {
+
+constructor(props) {
+  super(props);
+
+  this.state = {
+    data: ''
+  };
+  }
+
   bluemixURL() {
     return "https://console.ng.bluemix.net/registration/?target=/catalog/services/visual-recognition/";
   }
+
+  callWeather() {
+    axios.get(`http://45.55.198.11:5555/get_coordinates?zip_code=77450`)
+      .then(res => {
+        //const posts = res.data.data.children.map(obj => obj.data);
+        const result = JSON.stringify(res.data);
+        console.log("Returning Weather data is: " + result);
+        this.setState({ data: result });
+        console.log("The state has: " + this.state.data);
+      });
+  }
+
   render() {
     return (<div className="greatcf">
-      <p>Great! Now try the service with your own data <a className="base--a" href={this.bluemixURL()}>on Bluemix</a>.</p>
+      <p>Great! Now confirm the flooding prediction using Weather information via <a className="base--a" href={this.bluemixURL()}> the Watson Weather API</a>.</p>
       <div className="buttonZone">
-        <button className="bottomButton" onClick={function() { window.location=this.bluemixURL();}.bind(this)}>Go To Bluemix</button>
+        <button className="bottomButton" onClick={this.callWeather.bind(this)}>Weather API</button>
       </div>
+      <div>
+            <p>{this.state.data.toString()}</p>
+      </div>
+
+
     </div>);
   }
 }
